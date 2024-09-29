@@ -1,0 +1,5 @@
+python-dotenv
+Flask
+spotipy
+pandas
+flask_cors

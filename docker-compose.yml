@@ -1,0 +1,21 @@
+services:
+  flask-api:
+    build: ./API
+    ports:
+      - "5000:5000"
+    environment:
+      - SPOTIPY_CLIENT_ID=${CLIENT_ID}
+      - SPOTIPY_CLIENT_SECRET=${SECRET_KEY}
+    env_file:
+      - /.env
+    volumes:
+      - ./API:/app
+
+  expo-app:
+    build: /MyApp
+    ports:
+      - "19000:19000"
+      - "19001:19001"
+      - "19002:19002"
+    volumes:
+      - ./MyApp:/app
